@@ -754,7 +754,7 @@
       var end = 0;
       var check = true;
       $('.jqs-period', $(current).parent()).each(function (index, period) {
-        if ($(current).is(:visible)) {
+        if ($(current).is(':visible')) {
           if (current.attr('id') !== $(period).attr('id')) {
             start = Math.round($(period).position().top);
             end = Math.round($(period).position().top + $(period).height());
