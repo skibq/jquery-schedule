@@ -754,24 +754,26 @@
       var end = 0;
       var check = true;
       $('.jqs-period', $(current).parent()).each(function (index, period) {
-        if (current.attr('id') !== $(period).attr('id')) {
-          start = Math.round($(period).position().top);
-          end = Math.round($(period).position().top + $(period).height());
+        if ($(current).is(:visible)) {
+          if (current.attr('id') !== $(period).attr('id')) {
+            start = Math.round($(period).position().top);
+            end = Math.round($(period).position().top + $(period).height());
 
-          if (start > currentStart && start < currentEnd) {
-            check = false;
-          }
+            if (start > currentStart && start < currentEnd) {
+              check = false;
+            }
 
-          if (end > currentStart && end < currentEnd) {
-            check = false;
-          }
+            if (end > currentStart && end < currentEnd) {
+              check = false;
+            }
 
-          if (start < currentStart && end > currentEnd) {
-            check = false;
-          }
+            if (start < currentStart && end > currentEnd) {
+              check = false;
+            }
 
-          if (start === currentStart || end === currentEnd) {
-            check = false;
+            if (start === currentStart || end === currentEnd) {
+              check = false;
+            }
           }
         }
       });
